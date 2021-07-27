@@ -11,8 +11,7 @@ export class Navbar extends Component {
         return (
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">
-                    jobs
-                    <i className="fas fa-meteor"></i>
+                    <img src="../public/logoo.png"></img>
                 </h1>
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
