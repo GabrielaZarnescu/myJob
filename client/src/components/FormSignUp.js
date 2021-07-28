@@ -1,6 +1,7 @@
 import React from 'react';
 import useForm from './useForm';
 import validate from './validateInfo';
+import { Link } from 'react-router-dom'
 import './RegisterForm.css'
 
 const FormSignUp = ({ submitForm }) => {
@@ -127,7 +128,7 @@ const FormSignUp = ({ submitForm }) => {
                     Sign Up
                      </button>
                      <span className='form-input-login'>
-                         Already have an account? Login <a href='#'>here</a>
+                         Already have an account? Login <Link to="/register">here</Link>
                      </span>
             </form>
         </div>  

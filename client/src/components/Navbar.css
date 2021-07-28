@@ -12,13 +12,12 @@
     justify-self: start;
     margin-left: 20px;
     cursor:pointer;
-    font-family: 'Josefin Sans', sans-serif;
 }
 
-.fa-react{
+/*.fa-react{
     margin-left:0.5rem;
     font-size: 1.6rem;
-}
+}*/
 
 .nav-menu{
     display: grid;
@@ -48,6 +47,7 @@
 }
 
 .nav-links-mobile {
+    text-decoration: none;
     display: none;
 }
 
