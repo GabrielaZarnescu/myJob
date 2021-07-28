@@ -154,4 +154,200 @@ Date:   Fri Jul 23 17:14:43 2021 +0300
 [32m+[m[32m      },[m
 [32m+[m[32m      "dependencies": {[m
 [32m+[m[32m        "dom-helpers": {[m
-[32m+[m[32m          "version": "3.4.0",[
+[32m+[m[32m          "version": "3.4.0",[m
+[32m+[m[32m          "resolved": "https://registry.npmjs.org/dom-helpers/-/dom-helpers-3.4.0.tgz",[m
+[32m+[m[32m          "integrity": "sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==",[m
+[32m+[m[32m          "requires": {[m
+[32m+[m[32m            "@babel/runtime": "^7.1.2"[m
+[32m+[m[32m          }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "react-transition-group": {[m
+[32m+[m[32m          "version": "2.9.0",[m
+[32m+[m[32m          "resolved": "https://registry.npmjs.org/react-transition-group/-/react-transition-group-2.9.0.tgz",[m
+[32m+[m[32m          "integrity": "sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==",[m
+[32m+[m[32m          "requires": {[m
+[32m+[m[32m            "dom-helpers": "^3.4.0",[m
+[32m+[m[32m            "loose-envify": "^1.4.0",[m
+[32m+[m[32m            "prop-types": "^15.6.2",[m
+[32m+[m[32m            "react-lifecycles-compat": "^3.0.4"[m
+[32m+[m[32m          }[m
+[32m+[m[32m        }[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "read-pkg": {[m
+       "version": "3.0.0",[m
+       "resolved": "https://registry.npmjs.org/read-pkg/-/read-pkg-3.0.0.tgz",[m
+[36m@@ -14440,6 +14546,11 @@[m
+         "mime-types": "~2.1.24"[m
+       }[m
+     },[m
+[32m+[m[32m    "typed-styles": {[m
+[32m+[m[32m      "version": "0.0.7",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/typed-styles/-/typed-styles-0.0.7.tgz",[m
+[32m+[m[32m      "integrity": "sha512-pzP0PWoZUhsECYjABgCGQlRGL1n7tOHsgwYv3oIiEpJwGhFTuty/YNeduxQYzXXa3Ge5BdT6sHYIQYpl4uJ+5Q=="[m
+[32m+[m[32m    },[m
+     "typedarray": {[m
+       "version": "0.0.6",[m
+       "resolved": "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz",[m
+[36m@@ -14703,8 +14814,7 @@[m
+     "uuid": {[m
+       "version": "8.3.2",[m
+       "resolved": "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz",[m
+[31m-      "integrity": "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==",[m
+[31m-      "optional": true[m
+[32m+[m[32m      "integrity": "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="[m
+     },[m
+     "v8-compile-cache": {[m
+       "version": "2.3.0",[m
+[36m@@ -14776,6 +14886,14 @@[m
+         "makeerror": "1.0.x"[m
+       }[m
+     },[m
+[32m+[m[32m    "warning": {[m
+[32m+[m[32m      "version": "4.0.3",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/warning/-/warning-4.0.3.tgz",[m
+[32m+[m[32m      "integrity": "sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==",[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "loose-envify": "^1.0.0"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "watchpack": {[m
+       "version": "1.7.5",[m
+       "resolved": "https://registry.npmjs.org/watchpack/-/watchpack-1.7.5.tgz",[m
+[1mdiff --git a/client/package.json b/client/package.json[m
+[1mindex 7a94417..2dc7f14 100644[m
+[1m--- a/client/package.json[m
+[1m+++ b/client/package.json[m
+[36m@@ -6,9 +6,13 @@[m
+     "@testing-library/jest-dom": "^5.14.1",[m
+     "@testing-library/react": "^11.2.7",[m
+     "@testing-library/user-event": "^12.8.3",[m
+[32m+[m[32m    "bootstrap": "^5.0.2",[m
+     "react": "^17.0.2",[m
+     "react-dom": "^17.0.2",[m
+     "react-scripts": "4.0.3",[m
+[32m+[m[32m    "react-transition-group": "^4.4.2",[m
+[32m+[m[32m    "reactstrap": "^8.9.0",[m
+[32m+[m[32m    "uuid": "^8.3.2",[m
+     "web-vitals": "^1.1.2"[m
+   },[m
+   "scripts": {[m
+[36m@@ -17,7 +21,7 @@[m
+     "test": "react-scripts test",[m
+     "eject": "react-scripts eject"[m
+   },[m
+[31m-  "proxy":"http://localhost:5000",[m
+[32m+[m[32m  "proxy": "http://localhost:5000",[m
+   "eslintConfig": {[m
+     "extends": [[m
+       "react-app",[m
+[1mdiff --git a/client/src/App.css b/client/src/App.css[m
+[1mindex 74b5e05..e69de29 100644[m
+[1m--- a/client/src/App.css[m
+[1m+++ b/client/src/App.css[m
+[36m@@ -1,38 +0,0 @@[m
+[31m-.App {[m
+[31m-  text-align: center;[m
+[31m-}[m
+[31m-[m
+[31m-.App-logo {[m
+[31m-  height: 40vmin;[m
+[31m-  pointer-events: none;[m
+[31m-}[m
+[31m-[m
+[31m-@media (prefers-reduced-motion: no-preference) {[m
+[31m-  .App-logo {[m
+[31m-    animation: App-logo-spin infinite 20s linear;[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-.App-header {[m
+[31m-  background-color: #282c34;[m
+[31m-  min-height: 100vh;[m
+[31m-  display: flex;[m
+[31m-  flex-direction: column;[m
+[31m-  align-items: center;[m
+[31m-  justify-content: center;[m
+[31m-  font-size: calc(10px + 2vmin);[m
+[31m-  color: white;[m
+[31m-}[m
+[31m-[m
+[31m-.App-link {[m
+[31m-  color: #61dafb;[m
+[31m-}[m
+[31m-[m
+[31m-@keyframes App-logo-spin {[m
+[31m-  from {[m
+[31m-    transform: rotate(0deg);[m
+[31m-  }[m
+[31m-  to {[m
+[31m-    transform: rotate(360deg);[m
+[31m-  }[m
+[31m-}[m
+[1mdiff --git a/client/src/App.js b/client/src/App.js[m
+[1mindex 3784575..6671721 100644[m
+[1m--- a/client/src/App.js[m
+[1m+++ b/client/src/App.js[m
+[36m@@ -1,23 +1,10 @@[m
+[31m-import logo from './logo.svg';[m
+[32m+[m[32mimport React, {Component} from 'react';[m
+ import './App.css';[m
+ [m
+ function App() {[m
+   return ([m
+     <div className="App">[m
+[31m-      <header className="App-header">[m
+[31m-        <img src={logo} className="App-logo" alt="logo" />[m
+[31m-        <p>[m
+[31m-          Edit <code>src/App.js</code> and save to reload.[m
+[31m-        </p>[m
+[31m-        <a[m
+[31m-          className="App-link"[m
+[31m-          href="https://reactjs.org"[m
+[31m-          target="_blank"[m
+[31m-          rel="noopener noreferrer"[m
+[31m-        >[m
+[31m-          Learn React[m
+[31m-        </a>[m
+[31m-      </header>[m
+[32m+[m[32m      <h1>hi</h1>[m
+     </div>[m
+   );[m
+ }[m
+[1mdiff --git a/client/src/index.css b/client/src/index.css[m
+[1mdeleted file mode 100644[m
+[1mindex ec2585e..0000000[m
+[1m--- a/client/src/index.css[m
+[1m+++ /dev/null[m
+[36m@@ -1,13 +0,0 @@[m
+[31m-body {[m
+[31m-  margin: 0;[m
+[31m-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',[m
+[31m-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',[m
+[31m-    sans-serif;[m
+[31m-  -webkit-font-smoothing: antialiased;[m
+[31m-  -moz-osx-font-smoothing: grayscale;[m
+[31m-}[m
+[31m-[m
+[31m-code {[m
+[31m-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',[m
+[31m-    monospace;[m
+[31m-}[m
+[1mdiff --git a/client/src/index.js b/client/src/index.js[m
+[1mindex ef2edf8..7998135 100644[m
+[1m--- a/client/src/index.js[m
+[1m+++ b/client/src/index.js[m
+[36m@@ -1,6 +1,5 @@[m
+ import React from 'react';[m
+ import ReactDOM from 'react-dom';[m
+[31m-import './index.css';[m
+ import App from './App';[m
+ import reportWebVitals from './reportWebVitals';[m
+ [m
+[1mdiff --git a/client/src/logo.svg b/client/src/logo.svg[m
+[1mdeleted file mode 100644[m
+[1mindex 9dfc1c0..0000000[m
+[1m--- a/client/src/logo.svg[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3"><g fill="#61DAFB"><path d="M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 1
