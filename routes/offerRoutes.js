@@ -2,6 +2,7 @@ import express from "express";
 import {
   getOfferById,
   getOffer,
+  getOffers,
   CreateOffer,
   DeleteOffer,
   UpdateOffer,
@@ -13,6 +14,7 @@ router.route("/").get(protect, getOffer);
 router
   .route("/:id")
   .get(getOfferById)
+  .get(getOffers)
   .delete(protect, DeleteOffer)
   .put(protect, UpdateOffer);
 router.route("/create").post(protect, CreateOffer);

@@ -10,6 +10,15 @@ const getOffer = asyncHandler(async (req, res) => {
   res.json(offer);
 });
 
+// @desc    Fetch all offers
+// @route   GET /api/offers
+// @access  Public
+
+const getOffers = asyncHandler(async (req, res) => {
+  const offers = await Offer.find()
+    .sort({date: -1})
+   res.json(offers);
+});
 //@description     Fetch single offer
 //@route           POST /api/offer/:id
 //@access          Public
@@ -25,13 +34,7 @@ const getOfferById = asyncHandler(async (req, res) => {
 
   res.json(offer);
 });
-/*
-router.get('/',(req,res) => {
-  Offer.find()
-      .sort({date: -1})
-      .then(offers => res.json(offers))
-});
-*/
+
 //@description     Create offer
 //@route           POST /api/offer/create
 //@access          Private
@@ -100,4 +103,4 @@ const UpdateOffer = asyncHandler(async (req, res) => {
   }
 });
 
-export { getOfferById, getOffer, CreateOffer, DeleteOffer, UpdateOffer };
+export { getOfferById, getOffer, CreateOffer, DeleteOffer, UpdateOffer, getOffers};
