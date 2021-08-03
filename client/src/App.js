@@ -9,6 +9,7 @@ import RegisterForm from './components/RegisterForm';
 function App() {
   return (
     <Router>
+      <RegisterForm/>
     <div className="App"> 
       <Navbar/>
       <Switch>
