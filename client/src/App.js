@@ -3,21 +3,27 @@ import Navbar from './components/Navbar/Navbar'
 import GlobalStyle from './globalStyles';
 import Home from './pages/Home';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+
+
+import Homepage from './components/Homepage';
+import RegisterForm from './components/RegisterForm';
 
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <RegisterForm/>
+    <div className="App"> 
       <Navbar/>
-      <GlobalStyle />
       <Switch>
-        <Route path='/' exact component={Home} />
         
+        <Route path="/register" component={RegisterForm}/>
+        <Route exact path="/" component={Homepage}/>
       </Switch>
-      </Router>
     </div>
+    </Router>
   );
 }
 
