@@ -1,20 +1,20 @@
 import Offer from "../models/offerModel.js";
 import asyncHandler from "express-async-handler";
 
-// @desc    Get logged in user notes
-// @route   GET /api/notes
+// @desc    Get logged in user offers
+// @route   GET /api/offers
 // @access  Private
 
-const getNotes = asyncHandler(async (req, res) => {
+const getOffer = asyncHandler(async (req, res) => {
   const offer = await Offer.find({ user: req.user._id });
   res.json(offer);
 });
 
-//@description     Fetch single Note
-//@route           GET /api/notes/:id
+//@description     Fetch single offer
+//@route           POST /api/offer/:id
 //@access          Public
 
-const getNoteById = asyncHandler(async (req, res) => {
+const getOfferById = asyncHandler(async (req, res) => {
   const offer = await Offer.findById(req.params.id);
 
   if (offer) {
@@ -25,40 +25,46 @@ const getNoteById = asyncHandler(async (req, res) => {
 
   res.json(offer);
 });
-
-//@description     Create single Note
-//@route           GET /api/notes/create
+/*
+router.get('/',(req,res) => {
+  Offer.find()
+      .sort({date: -1})
+      .then(offers => res.json(offers))
+});
+*/
+//@description     Create offer
+//@route           POST /api/offer/create
 //@access          Private
 
-const CreateNote = asyncHandler(async (req, res) => {
-  const { title, content, category } = req.body;
+const CreateOffer = asyncHandler(async (req, res) => {
+  const { progLang, date, workTime, location, description } = req.body;
 
-  if (!title || !content || !category) {
+  if (!progLang || !workTime| !location || !description) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
     return;
   } else {
-    const note = new Offer({ user: req.user._id, title, content, category });
+    const offer= new Offer({ user: req.user._id, progLang, date, workTime, location, description });
 
-    const createdOffer = await note.save();
+    const createdOffer = await offer.save();
 
     res.status(201).json(createdOffer);
   }
 });
 
-//@description     Delete single Note
+//@description     Delete single offer
 //@route           GET /api/notes/:id
 //@access          Private
-const DeleteNote = asyncHandler(async (req, res) => {
-  const note = await Offer.findById(req.params.id);
+const DeleteOffer = asyncHandler(async (req, res) => {
+  const offer = await Offer.findById(req.params.id);
 
-  if (note.user.toString() !== req.user._id.toString()) {
+  if (offer.user.toString() !== req.user._id.toString()) {
     res.status(401);
     throw new Error("You can't perform this action");
   }
 
-  if (note) {
-    await note.remove();
+  if (offer) {
+    await offer.remove();
     res.json({ message: "Note Removed" });
   } else {
     res.status(404);
@@ -66,30 +72,32 @@ const DeleteNote = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Update a note
-// @route   PUT /api/notes/:id
+// @desc    Update an offer
+// @route   PUT /api/offer/:id
 // @access  Private
-const UpdateNote = asyncHandler(async (req, res) => {
-  const { title, content, category } = req.body;
+const UpdateOffer = asyncHandler(async (req, res) => {
+  const { progLang, date, workTime, location, description } = req.body;
 
-  const note = await Offer.findById(req.params.id);
+  const offer = await Offer.findById(req.params.id);
 
-  if (note.user.toString() !== req.user._id.toString()) {
+  if (offer.user.toString() !== req.user._id.toString()) {
     res.status(401);
     throw new Error("You can't perform this action");
   }
 
-  if (note) {
-    note.title = title;
-    note.content = content;
-    note.category = category;
+  if (offer) {
+    offer.progLang= progLang;
+    offer.date = date;
+    offer.workTime = workTime;
+    offer.location = location;
+    offer.description = description;
 
-    const updatedNote = await note.save();
-    res.json(updatedNote);
+    const updatedOffer = await offer.save();
+    res.json(updatedOffer);
   } else {
     res.status(404);
     throw new Error("Note not found");
   }
 });
 
-export { getNoteById, getNotes, CreateNote, DeleteNote, UpdateNote };
+export { getOfferById, getOffer, CreateOffer, DeleteOffer, UpdateOffer };

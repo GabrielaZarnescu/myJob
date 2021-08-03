@@ -1,20 +1,20 @@
 import express from "express";
 import {
-  getNoteById,
-  getNotes,
-  CreateNote,
-  DeleteNote,
-  UpdateNote,
+  getOfferById,
+  getOffer,
+  CreateOffer,
+  DeleteOffer,
+  UpdateOffer,
 } from "../controllers/offerController.js";
 const router = express.Router();
 import { protect } from "../middleware/authMiddleware.js";
 
-router.route("/").get(protect, getNotes);
+router.route("/").get(protect, getOffer);
 router
   .route("/:id")
-  .get(getNoteById)
-  .delete(protect, DeleteNote)
-  .put(protect, UpdateNote);
-router.route("/create").post(protect, CreateNote);
+  .get(getOfferById)
+  .delete(protect, DeleteOffer)
+  .put(protect, UpdateOffer);
+router.route("/create").post(protect, CreateOffer);
 
 export default router;
