@@ -1,14 +1,6 @@
 import Offer from "../models/offerModel.js";
 import asyncHandler from "express-async-handler";
 
-// @desc    Get logged in user offers
-// @route   GET /api/offers
-// @access  Private
-
-const getOffer = asyncHandler(async (req, res) => {
-  const offer = await Offer.find({ user: req.user._id });
-  res.json(offer);
-});
 
 // @desc    Fetch all offers
 // @route   GET /api/offers
@@ -19,8 +11,30 @@ const getOffers = asyncHandler(async (req, res) => {
     .sort({date: -1})
    res.json(offers);
 });
+
+//@description     Create Comment
+//@route           PUT /api/offer/:id
+//@access          Private
+
+const createComment = asyncHandler(async (req, res) => {
+  const comment = {
+    text:req.body.text,
+    postedBy:req.user._id
+}
+Offer.findByIdAndUpdate(req.body.Id,{
+    $push:{comments:comment}
+})
+if (comment) {
+  res.json(comment);
+} else {
+  res.status(404).json({ message: "Error" });
+}
+
+res.json(comment);
+})
+
 //@description     Fetch single offer
-//@route           POST /api/offer/:id
+//@route           GET /api/offer/:id
 //@access          Public
 
 const getOfferById = asyncHandler(async (req, res) => {
@@ -29,7 +43,7 @@ const getOfferById = asyncHandler(async (req, res) => {
   if (offer) {
     res.json(offer);
   } else {
-    res.status(404).json({ message: "Note not found" });
+    res.status(404).json({ message: "Offer not found" });
   }
 
   res.json(offer);
@@ -56,7 +70,7 @@ const CreateOffer = asyncHandler(async (req, res) => {
 });
 
 //@description     Delete single offer
-//@route           GET /api/notes/:id
+//@route           DELETE /api/notes/:id
 //@access          Private
 const DeleteOffer = asyncHandler(async (req, res) => {
   const offer = await Offer.findById(req.params.id);
@@ -68,16 +82,17 @@ const DeleteOffer = asyncHandler(async (req, res) => {
 
   if (offer) {
     await offer.remove();
-    res.json({ message: "Note Removed" });
+    res.json({ message: "Offer Removed" });
   } else {
     res.status(404);
-    throw new Error("Note not Found");
+    throw new Error("Offer not Found");
   }
 });
 
 // @desc    Update an offer
 // @route   PUT /api/offer/:id
 // @access  Private
+/*
 const UpdateOffer = asyncHandler(async (req, res) => {
   const { progLang, date, workTime, location, description } = req.body;
 
@@ -102,5 +117,5 @@ const UpdateOffer = asyncHandler(async (req, res) => {
     throw new Error("Note not found");
   }
 });
-
-export { getOfferById, getOffer, CreateOffer, DeleteOffer, UpdateOffer, getOffers};
+*/
+export { getOfferById, CreateOffer, DeleteOffer, createComment, getOffers};

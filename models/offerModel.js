@@ -22,11 +22,15 @@ const noteSchema = mongoose.Schema(
         type: String,
         required: true
     },
+    comments:[{
+        text:String,
+        postedBy:{type:mongoose.Schema.Types,ref:"User"}
+    }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: "User",
-      },
+      }
   
   });
 
