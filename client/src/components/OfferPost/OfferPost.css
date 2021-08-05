@@ -1,38 +1,67 @@
 .container {
   margin: 50px auto;
-  width: 1100px;
+  width: 1000px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
-  height: 650px;
+  height: 500px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 0.5fr;
 }
-
+.right{
+  background-color: azure;
+  
+}
+img {
+  position: relative;
+  top:35%;
+  left:25%;
+  max-width: 50%;
+  height: auto;
+}
 .left{
     background: linear-gradient(
         90deg,
         rgb(16, 21, 34) 35%,
-    rgb(37, 170, 225) 100%
+        rgb(37, 170, 225) 100%
       );
       border-radius: 10px 0 0 10px;
       position: relative;
+      color:white;
+      display: flex;
 }
 
-Form {
+form{
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
   width: 90%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
+  align-items:flex-start;
+  font-size: large;
+  
 }
 
-h1{
-  color:aliceblue;
-  left:50%;
+
+.title{
+ position: relative;
+ display: flex;
+ justify-content: flex-start;
+ left:35%;
+ top:20%;
+ font-size: x-large;
+}
+
+Button{
+  position: relative;
+  top:4%;
+  left:30%;
+}
+.form-control{
+  background-color: azure;
+  
 }

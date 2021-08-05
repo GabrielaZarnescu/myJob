@@ -30,7 +30,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 70vw;
+  width: 60vw;
   justify-content: end;
   margin-right: 5rem;
 }
@@ -58,10 +58,10 @@
 .menu-icon {
   display: none;
 }
-#logo {
+/*#logo {
   width: 200px;
   display: flex;
-}
+}*/
 
 @media screen and (max-width: 960px) {
   .NavbarItems {

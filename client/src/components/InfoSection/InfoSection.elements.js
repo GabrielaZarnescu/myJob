@@ -6,7 +6,7 @@ export const InfoSec = styled.div`
   color: #fff;
   padding: 160px 0;
   background-image: linear-gradient(270deg, rgba(58, 203, 247, 0.10), rgba(16, 21, 34, 1) ), 
-      url('./images/image-2.jpg'); 
+      url('./assets/images/image-2.jpg'); 
   
   background-position: center;
   background-repeat: no-repeat;

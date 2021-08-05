@@ -26,7 +26,7 @@ export class Navbar extends Component {
         } ; 
         return (
             <nav className="NavbarItems">
-                <img classname="navbar-logo" style={size2} src={`${process.env.PUBLIC_URL}/assets/images/logoo.png`}></img>
+                <img classname="navbar-logo"  src={`${process.env.PUBLIC_URL}/assets/images/logoo.png`}></img>
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
@@ -35,7 +35,7 @@ export class Navbar extends Component {
                     <NavItem >Home</NavItem></Link>
                     <Link to="/offer" className="nav-links">
                     <NavItem >Make a post</NavItem></Link>
-                    <Link to="/" className="nav-links">
+                    <Link to="/contact" className="nav-links">
                     <NavItem >Contact</NavItem></Link>
                     <Link to="/register" className="nav-links-mobile">
                     <NavItem >Sign in</NavItem></Link>
@@ -47,4 +47,4 @@ export class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default Navbar;

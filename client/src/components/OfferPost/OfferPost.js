@@ -6,70 +6,47 @@ const OfferPost = ({}) => {
   
   return (
     <div className="container">
-    
-    <div className="left">
-        <h1>Create an offer</h1>
-    <Form className="form" >
-      <FormGroup row>
-        <Label className="labels"  sm={2}>Select programming language </Label>
-        <Col sm={10}>
-          <Input className="inputs"
-           type="select"
-           name="language"
-            >
-            <option>JS</option>
-            <option>C</option>
-            <option>C++</option>
-            <option>React</option>
-            <option>Java</option>
-            <option>Python</option>
-            <option>Ruby</option>
-            <option>C#</option>
-          </Input>
-        </Col>
-      </FormGroup>
-      <FormGroup row>
-        <Label  className="labels" sm={2}>Select work time</Label>
-        <Col sm={10}>
-          <Input className="inputs" 
-          type="select" 
-          name="work"  >
-            <option>full time</option>
-            <option>part time</option>
-          </Input>
-        </Col>
-      </FormGroup>
-      <FormGroup row>
-        <Label className="labels" sm={2}>Select location</Label>
-        <Col sm={10}>
-          <Input className="inputs" 
-          type="select" 
-          name="location"  >
-            <option>Timisoara</option>
-            <option>remote</option>
-          </Input>
-        </Col>
-      </FormGroup>
-      <FormGroup row>
-        <Label className="labels" sm={2}>Job Description</Label>
-        <Col sm={10}>
-          <Input className="inputs" 
-          type="textarea" 
-          name="text"
-          placeholder="Enter a description"  />
-        </Col>
-      </FormGroup>
       
-      <FormGroup check row>
-        <Col sm={{ size: 10, offset: 2 }}>
-          <Button >Submit</Button>
-        </Col>
-      </FormGroup>
-    </Form>
-    </div>
-        <div className="right">
-            
-        </div>
-    </div> )}
-
+<div className="left"> 
+<p className="title">Create an offer</p>
+    <form>
+      <div class="form-group">
+        <label for="input1">Select programming language: </label>
+        <select class="form-control" id="input1">
+          <option>JavaScript</option>
+          <option>Java</option>
+          <option>React</option>
+          <option>C/C++</option>
+          <option>C#</option>
+          <option>Ruby</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="input2">Select work hours: </label>
+        <select class="form-control" id="input2">
+          <option>full time</option>
+          <option>part time</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="input3">Select location: </label>
+        <select class="form-control" id="input3">
+          <option>Remote</option>
+          <option>Timisoara</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="input4">Add a description for the job: </label>
+        <textarea class="form-control" id="input4" rows="3"></textarea>
+      </div>
+      <Button type="submit">Done</Button>
+    </form>
+</div>
+<div className="right">
+<img src={`${process.env.PUBLIC_URL}/assets/images/idk.png`}/>
+{/*<i class="fas fa-address-card"></i>*/}
+  
+</div>
+</div>
+  )}
     export default OfferPost;
