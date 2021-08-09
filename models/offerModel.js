@@ -23,8 +23,8 @@ const noteSchema = mongoose.Schema(
         required: true
     },
     comments:[{
-        text:String,
-        postedBy:{type:mongoose.Schema.Types,ref:"User"}
+        text: String,
+        postedBy:{type:mongoose.Schema.Types.ObjectId,ref:"User"}
     }],
     user: {
         type: mongoose.Schema.Types.ObjectId,

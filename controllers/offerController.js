@@ -21,17 +21,22 @@ const createComment = asyncHandler(async (req, res) => {
     text:req.body.text,
     postedBy:req.user._id
 }
-Offer.findByIdAndUpdate(req.body.Id,{
-    $push:{comments:comment}
-})
-if (comment) {
-  res.json(comment);
-} else {
-  res.status(404).json({ message: "Error" });
-}
 
-res.json(comment);
+Offer.findByIdAndUpdate({ _id: req.params.id },{
+    $push:{comments:comment}
+},{
+    new:true
 })
+
+.populate("comments.postedBy","_id firstName lastName")
+.exec((err,result)=>{
+    if(err){
+        return res.status(422).json({error:err})
+    }else{
+        res.json(result)
+    }
+})
+});
 
 //@description     Fetch single offer
 //@route           GET /api/offer/:id
