@@ -1,8 +1,7 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from "mongoose";
 
-//Create Schema
-const OfferSchema = new Schema({
+const noteSchema = mongoose.Schema(
+  {
     progLang: {
         type: String,
         required: true
@@ -10,9 +9,8 @@ const OfferSchema = new Schema({
     date: {
         type:Date,
         default: Date.now
-    }
-    //user
-   /* workTime: {
+    },
+     workTime: {
         type: String,
         required: true
     },
@@ -23,8 +21,15 @@ const OfferSchema = new Schema({
     description:{
         type: String,
         required: true
-    }
-*/
-});
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "User",
+      },
+  
+  });
 
-module.exports=Offer=mongoose.model('offer',OfferSchema);
+const Offer = mongoose.model("Offer", noteSchema);
+
+export default Offer;
