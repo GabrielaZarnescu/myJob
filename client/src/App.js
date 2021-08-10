@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import FormSuccess from './FormSuccess';
-import RegisterForm from './RegisterForm';
-
+/*import RegisterForm from './components/register-user/RegisterForm'; */
+/* import LoginForm from './components//LoginForm'; */
+import MainPage from './components/JobListing/MainPage';
 function App() {
   return (
     <div className="App">
-      <RegisterForm/>
+   <MainPage></MainPage>
     </div>
   );
 }
