@@ -4,7 +4,7 @@ import generateToken from "../utils/generateToken.js";
 
 
 //@description     Auth the user
-//@route           POST /api/users/login
+//@route            /api/users/login
 //@access          Public
 
 const authUser = asyncHandler(async (req, res) => {
@@ -14,11 +14,6 @@ const authUser = asyncHandler(async (req, res) => {
 
   if (user && (await user.matchPassword(password))) {
     res.json({
-      _id: user._id,
-      name: user.firstName,
-      lastName: user.lastName,
-      address: user.address,
-      username: user.address,
       email: user.email,
       token: generateToken(user._id),
     });
@@ -29,15 +24,16 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 //@description     Register new user
-//@route           POST /api/users/
+//@route            /api/users/
 //@access          Public
+
 const registerUser = asyncHandler(async (req, res) => {
   const { firstName, lastName, username, address, email, password } = req.body;
 
   const userExists = await User.findOne({ email });
-  const userExists2 = await User.findOne({ username});
+  
 
-  if (userExists || userExists2) {
+  if (userExists) {
     res.status(404);
     throw new Error("User already exists");
   }
@@ -69,7 +65,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 // @desc    GET user profile
-// @route   GET /api/users/profile
+// @route    /api/users/profile
 // @access  Private
 
 const updateUserProfile = asyncHandler(async (req, res) => {
@@ -78,7 +74,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
-    user.pic = req.body.pic || user.pic;
+    user.username = req.body.username || user.username;
+   
     if (req.body.password) {
       user.password = req.body.password;
     }
@@ -87,10 +84,9 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
     res.json({
       _id: updatedUser._id,
-      name: updatedUser.name,
+      firstName: updatedUser.firstName,
+      lastName: updatedUser.lastName,
       email: updatedUser.email,
-      pic: updatedUser.pic,
-      isAdmin: updatedUser.isAdmin,
       token: generateToken(updatedUser._id),
     });
   } else {

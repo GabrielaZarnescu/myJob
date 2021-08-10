@@ -13,8 +13,8 @@ const app = express(); // main thing
 
 app.use(express.json()); // to accept json data
 
-app.use("/api/offers", offerRoutes);
-app.use("/api/users", userRoutes);
+app.use("/offers", offerRoutes);
+app.use("/users", userRoutes);
 
 // Error Handling middlewares
 app.use(notFound);
