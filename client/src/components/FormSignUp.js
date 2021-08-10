@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom'
 import './RegisterForm.css'
 
 const FormSignUp = ({ submitForm }) => {
-    const { handleChange, handleSubmit, values, errors } = useForm(
-      submitForm,
-      validate
-    );
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
+    const [errors,setErrors]=useState("");
   
 
     return (
