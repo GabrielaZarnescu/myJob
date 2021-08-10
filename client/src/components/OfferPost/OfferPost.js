@@ -5,8 +5,8 @@ import { Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import {Button} from "../Button/Button";
 import './OfferPost.css'
 const OfferPost = ({history}) => {
-  const [proglang,setProglang]=useState("");
-  const [work,setWork]=useState("");
+  const [progLang,setProgLang]=useState("");
+  const [workTime,setWorkTime]=useState("");
   const [location,setLocation]=useState("");
   const [description,setDescription]=useState("");
   const [error,setError]=useState("");
@@ -19,8 +19,8 @@ const OfferPost = ({history}) => {
     };
     try {
       const {data} = await axios.post(
-        "api/offers",
-        {proglang,work,location,description},
+        "routes/offerRoutes/create",
+        {progLang,workTime,location,description},
         config
       );
       history.push("/");
@@ -41,7 +41,7 @@ const OfferPost = ({history}) => {
       <div class="form-group">
         <label for="input1">Select programming language: </label>
         <select class="form-control" id="input1" required
-            onChange={(e)=>setProglang(e.target.value)}>
+            onChange={(e)=>setProgLang(e.target.value)}>
           <option>JavaScript</option>
           <option>Java</option>
           <option>React</option>
@@ -53,7 +53,7 @@ const OfferPost = ({history}) => {
       <div class="form-group">
         <label for="input2">Select work hours: </label>
         <select class="form-control" id="input2" required
-            onChange={(e)=>setWork(e.target.value)}>
+            onChange={(e)=>setWorkTime(e.target.value)}>
           <option>full time</option>
           <option>part time</option>
         </select>
