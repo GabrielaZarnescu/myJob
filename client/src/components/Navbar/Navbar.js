@@ -27,7 +27,7 @@ export class Navbar extends Component {
         };
         return (
             <nav className="NavbarItems">
-                <img className="navlogo" style={size2} src={`${process.env.PUBLIC_URL}/assets/images/logoo.png`}></img>
+                <img className="navlogo" style={size2} src={`${process.env.PUBLIC_URL}/assets/images/logoo.png`} onClick></img>
                 <div className='menu-group'>
                     <div className="menu-icon" onClick={this.handleClick}>
                         <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
