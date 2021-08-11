@@ -6,6 +6,7 @@ import OfferPost from './components/OfferPost/OfferPost';
 import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import RegisterForm from './components/RegisterForm';
+import LoginForm from './components/LoginForm';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Switch>
         <Route path="/register" component={RegisterForm}/>
         <Route path="/offer" component={OfferPost}/>
+        <Route path="/loginn" component={LoginForm}/>
         <Route path="/" component={Home}/>
       </Switch>
     </div>

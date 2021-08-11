@@ -34,12 +34,15 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.5",
     "react-redux": "^7.2.4",
+    "redux": "^4.1.1",
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0"
   }
 }

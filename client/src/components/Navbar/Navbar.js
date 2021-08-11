@@ -40,10 +40,10 @@ export class Navbar extends Component {
                             <NavItem >Make a post</NavItem></Link>
                         <Link to="/contact" className="nav-links">
                             <NavItem >Contact</NavItem></Link>
-                        <Link to="/register" className="nav-links-mobile">
+                        <Link to="/loginn" className="nav-links-mobile">
                             <NavItem >Sign in</NavItem></Link>
                     </Nav>
-                    <Link className="sign-btn" to="/register">
+                    <Link className="sign-btn" to="/loginn">
                         <Button >Sign in</Button></Link>
                 </div>
             </nav>

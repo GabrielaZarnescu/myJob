@@ -1,10 +1,10 @@
 .form-container {
   margin: 50px auto;
-  width: 1100px;
+  width: 900px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
-  height: 650px;
+  height: 550px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -22,8 +22,8 @@
 .form-content-left {
   background: linear-gradient(
     90deg,
-    rgb(53, 80, 95) 0%,
-    rgb(10, 142, 145) 100%
+    rgb(0, 64, 99) 0%,
+    rgb(35, 152, 206) 100%
   );
   border-radius: 10px 0 0 10px;
   position: relative;
@@ -31,7 +31,7 @@
 
 .form-img {
   width: 70%;
-  height: 60%;
+  height: 40%;
   position: absolute;
   top: 50%;
   left: 50%;

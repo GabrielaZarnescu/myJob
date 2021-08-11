@@ -7,8 +7,8 @@ import {
 import { protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
-router.route("/").post(registerUser);
-router.post("/login", authUser);
-router.route("/profile").post(protect, updateUserProfile);
+router.route("/register").post(registerUser);   //de exemplu register vezi ca are "/register" Cand scrii in front end, o sa iei "/users/register"
+router.post("/login", authUser);  //"users/login"
+router.route("/profile").post(protect, updateUserProfile);  //"users/profile"
 
 export default router;

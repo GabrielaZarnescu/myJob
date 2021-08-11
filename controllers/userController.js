@@ -28,7 +28,7 @@ const authUser = asyncHandler(async (req, res) => {
 //@access          Public
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { firstName, lastName, username, address, email, password } = req.body;
+  const { name, email, password, type } = req.body;
 
   const userExists = await User.findOne({ email });
   
@@ -39,23 +39,18 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   const user = await User.create({
-    firstName,
-    lastName,
-    address,
+    name,
     email,
-    username,
     password,
-    
+    type
   });
 
   if (user) {
     res.status(201).json({
       _id: user._id,
-      name: user.firstName,
-      lastName: user.lastName,
-      address: user.address,
-      username: user.address,
+      name: user.name,
       email: user.email,
+      type: user.type,
       token: generateToken(user._id),
     });
   } else {
@@ -74,7 +69,6 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
-    user.username = req.body.username || user.username;
    
     if (req.body.password) {
       user.password = req.body.password;
@@ -84,8 +78,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
     res.json({
       _id: updatedUser._id,
-      firstName: updatedUser.firstName,
-      lastName: updatedUser.lastName,
+      name:updateUser.name,
       email: updatedUser.email,
       token: generateToken(updatedUser._id),
     });
