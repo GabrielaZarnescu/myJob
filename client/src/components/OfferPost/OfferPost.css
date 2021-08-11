@@ -1,10 +1,10 @@
 .container {
   margin: 50px auto;
-  width: 1000px;
+  width: 800px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
-  height: 500px;
+  height: 600px;
   display: grid;
   grid-template-columns: 1.5fr 0.5fr;
 }
@@ -52,8 +52,9 @@ form{
  display: flex;
  justify-content: flex-start;
  left:35%;
- top:20%;
+ top:15%;
  font-size: x-large;
+ color:#27cdff
 }
 
 Button{
@@ -62,7 +63,17 @@ position:unset;
   top:4%;
   left:30%;
 }
+.form-group{
+  margin-bottom: 0.5rem;
+}
 .form-control{
-  background-color: azure;
-  
+  display: block;
+  padding-left: 10px;
+  outline-style: auto;
+  outline-color: rgb(42, 194, 194);
+  border-radius: 2px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  margin-top: 8px;
 }

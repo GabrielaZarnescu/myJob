@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './LoginForm.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { login} from '../actions/authActions';
-const LoginForm = ({ history }) => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
@@ -16,29 +16,24 @@ const dispatch = useDispatch();
     return state.userLogin;
   });
   const { loading, userInfo,error} = state;
-
-  useEffect(() => {
-    if(userInfo)
-        history.push('/')
-  }, [state]);
-
-
+  const history=useHistory();
+ 
   const loginHandler = async (e) => {
     e.preventDefault();
     dispatch(login(email, password));
-
+    history.push("/");
   };
 
   return (
 
-    <div className="container">
-      <h1 className="title"> Login</h1>
-      <form className="form" onSubmit={loginHandler}>
+    <div className="containerr">
+      <h1 className="titlu"> Login</h1>
+      <form className="formm" onSubmit={loginHandler}>
          {error&& <span>{error}</span>}  
          
         <div className='form-inputs'>
-          <label htmlFor='email' className='form-label'>
-            Email:
+          <label htmlFor='email' className='label'>
+            Email: 
                 </label>
           <input
             type='text' required
@@ -53,8 +48,8 @@ const dispatch = useDispatch();
         </div>
 
         <div className='form-inputs'>
-          <label htmlFor='password' className='form-label'>
-            Password:
+          <label htmlFor='password' className='label'>
+            Password: 
                 </label>
           <input
             type="password" required
@@ -65,13 +60,9 @@ const dispatch = useDispatch();
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        
-        <div className="form-button" type="submit">
-          <button>Login</button>
-          <br/>
-          <br/>
-          <span className="subsol">New Member? Register <Link to="/register"> here</Link></span>
-        </div>
+          <button className="form-button" type="submit">Login</button>
+          <span className="subsol">New Member? Register <Link to="/register"> here</Link>
+          </span>
       </form>
     </div>
 

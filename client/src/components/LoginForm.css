@@ -1,18 +1,18 @@
-.container {
+.containerr {
     margin: 50px auto;
     width: 500px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     background: linear-gradient(
     90deg,
-    rgb(8, 87, 129) 0%,
+    rgb(6, 64, 95) 0%,
     rgb(133, 187, 212) 100%
   );
   border-radius: 10px 10px 10px 10px;
   position: relative;
     height: 500px;
-    display: flex;
+    display: grid;
   }
-  .form {
+  formm {
     position: absolute;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -25,17 +25,73 @@
   }
   .subsol {
       font-size: small;
+      margin-top: 20px;
+      width:80%;
+      text-align: center;
+      color:white;
+  }
+  .subsol a {
+    text-decoration: none;
+    color:#27cdff;
+    font-weight: 500;
   }
   .form-inputs {
     margin-bottom: 0.5rem;
   }
-  .title {
-      position: relative;
+  .titlu {
+    position: relative;
     display: flex;
     justify-content: flex-start;
-    font-size: small;
+    font-size: x-large;
     margin-bottom: 1rem;
-    color: rgb(0, 0, 0);
+    color: #27cdff;
+    top:15%;
+    left:45%;
+    font-family: "Josefin Sans", sans-serif;
     
-    left:35%;
+  }
+  .input {
+    display: block;
+  padding-left: 10px;
+  outline-style: auto;
+  outline-color: rgb(42, 194, 194);
+  border-radius: 2px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  }
+  .input::placeholder{
+    color: #595959;
+  font-size: 12px;
+  }
+  .label {
+    display: inline-block;
+  font-size: medium;
+  margin-bottom: 6px;
+  color: #ffffff;
+  }
+  .form-button{
+    width: 30%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 176, 255) 0%,
+    rgb(0, 232, 236) 100%
+  );
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  position: unset;
+  }
+  .form-button:hover{
+    cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(9, 73, 141) 0%,
+    rgb(48, 116, 235) 100%
+  );
+  transition: all 0.5s ease-out;
   }
