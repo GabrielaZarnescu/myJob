@@ -3,10 +3,10 @@ import axios from 'axios';
 import { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {register} from '../actions/authActions';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import './RegisterForm.css'
 
-const FormSignUp = ({ history }) => {
+const FormSignUp = () => {
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -18,11 +18,8 @@ const FormSignUp = ({ history }) => {
         return state.userLogin;
       });
     const { loading, userInfo, error } = state;
+    const history=useHistory();
     
-    // useEffect(() => {
-    //     if (userInfo) history.push('/');
-    //   }, [state]);
-
     const registerHandler = async (e) => {
         e.preventDefault();
         if(password.length<6)
@@ -32,6 +29,7 @@ const FormSignUp = ({ history }) => {
         }, 5000);
       console.log({name,email,password,type})
         dispatch(register(name,email,password,type));
+        history.push("/");
     };
 
 

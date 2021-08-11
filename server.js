@@ -13,8 +13,8 @@ const app = express(); // main thing
 
 app.use(express.json()); // to accept json data
 
-app.use("/offers", offerRoutes);
-app.use("/users", userRoutes);
+app.use("/offers", offerRoutes);  
+app.use("/users", userRoutes);  //la users:  de exemplu ai  "/users" si aia cu userRoutes. Te duci la userRout
 
 // Error Handling middlewares
 app.use(notFound);
