@@ -41,7 +41,7 @@ const FormSignUp = () => {
                 <h1>Get started with us today! Create your account filling out the information below </h1>
                 <div className="form-inputs">
                     <label htmlFor="type" className="form-label">
-                        Who do you represent?
+                    Which one of the following roles describes you best?
                     </label>
                     <select className="form-input" onChange={(e)=>setType(e.target.value)}>
                         <option>Company</option>

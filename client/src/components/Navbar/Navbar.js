@@ -38,10 +38,10 @@ export class Navbar extends Component {
                     <Nav className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                         <Link to="/" className="nav-links">
                             <NavItem >Home</NavItem></Link>
-                        <Link to="/offer" className="nav-links">
+                        <Link to="/makepost" className="nav-links">
                             <NavItem >Make a post</NavItem></Link>
-                        <Link to="/contact" className="nav-links">
-                            <NavItem >Contact</NavItem></Link>
+                        <Link to="/posts" className="nav-links">
+                            <NavItem >Posts</NavItem></Link>
                         <Link to="/loginn" className="nav-links-mobile">
                             <NavItem >Sign in</NavItem></Link>
                     </Nav>

@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import offerRoutes from "./routes/offerRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import reqRoutes from "./routes/reqRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
@@ -14,8 +15,8 @@ const app = express(); // main thing
 app.use(express.json()); // to accept json data
 
 app.use("/offers", offerRoutes);  
-app.use("/users", userRoutes);  //la users:  de exemplu ai  "/users" si aia cu userRoutes. Te duci la userRout
-
+app.use("/users", userRoutes);  
+app.use("/requests", reqRoutes);
 // Error Handling middlewares
 app.use(notFound);
 app.use(errorHandler);
