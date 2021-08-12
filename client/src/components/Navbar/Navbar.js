@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 //import { MenuItems } from './MenuItems';
 import { Button } from '../Button/Button';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import {IconButton} from '@material-ui/core';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import './Navbar.css';
 import {
     Collapse,
@@ -44,7 +46,10 @@ export class Navbar extends Component {
                             <NavItem >Sign in</NavItem></Link>
                     </Nav>
                     <Link className="sign-btn" to="/loginn">
-                        <Button >Sign in</Button></Link>
+                        <IconButton>
+                            <AccountCircleIcon></AccountCircleIcon>
+                        </IconButton>
+                    </Link>
                 </div>
             </nav>
         )

@@ -59,14 +59,14 @@ const getOfferById = asyncHandler(async (req, res) => {
 //@access          Private
 
 const CreateOffer = asyncHandler(async (req, res) => {
-  const { progLang, date, workTime, location, description } = req.body;
+  const { progLang, date, workTime, location, description ,userId} = req.body;
 
   if (!progLang || !workTime| !location || !description) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
     return;
   } else {
-    const offer= new Offer({ user: req.user._id, progLang, date, workTime, location, description });
+    const offer= new Offer({ user: userId, progLang, date, workTime, location, description });
 
     const createdOffer = await offer.save();
 

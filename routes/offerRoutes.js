@@ -9,11 +9,11 @@ import {
 const router = express.Router();
 import { protect } from "../middleware/authMiddleware.js";
 
-router.route("/").get(protect, getOffers);  //"/offers/"
+router.route("/").get(getOffers);  //"/offers/"
 router.route("/:id") //"/offers/ceva id"
   .get(getOfferById)
   .delete(protect, DeleteOffer)
   .put(protect, createComment);
-router.route("/create").post(protect, CreateOffer);
+router.route("/create").post(CreateOffer);
 
 export default router;

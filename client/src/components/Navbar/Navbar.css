@@ -33,6 +33,7 @@
 }
 .sign-btn{
   margin-right: 5rem;
+  color:primary;
 }
 .nav-links {
   color: white;
@@ -131,7 +132,7 @@
     transition: 250ms;
   }
 
-  Button {
+  .sign-btn {
     display: none;
     position: unset!important;
   }

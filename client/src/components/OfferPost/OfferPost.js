@@ -1,36 +1,40 @@
 import React from 'react';
+import {useDispatch,useSelector} from 'react-redux'
 import axios from 'axios';
 import { useState,useEffect } from 'react';
-import { Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { useHistory } from 'react-router';
 import {Button} from "../Button/Button";
+
 import './OfferPost.css'
-const OfferPost = ({history}) => {
+const OfferPost = (props) => {
   const [progLang,setProgLang]=useState("");
   const [workTime,setWorkTime]=useState("");
   const [location,setLocation]=useState("");
   const [description,setDescription]=useState("");
   const [error,setError]=useState("");
+  const dispatch=useDispatch();
+  const state = useSelector(state => {
+    return state.userLogin;
+  });
+  const {userInfo} = state;
+  const history=useHistory();
   const addHandler = async (e) => {
-    e.preventDefault();
     const config = {
       header: {
-      "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
     };
-    try {
-      const {data} = await axios.post(
-        "routes/offerRoutes/create",
-        {progLang,workTime,location,description},
-        config
-      );
-      history.push("/");
-    } catch (error) {
-      setError(error.response.data.error);
-      setTimeout(()=> {
-        setError("");
-      }, 5000);
+    e.preventDefault();
+    console.log(userInfo);
+    const userId=userInfo._id;
+    console.log(userId);
+   const {data} = await axios.post(
+     "offers/create",
+     {progLang,workTime,location,description,userId},
+     config
+   )
+    history.push("/");
     };
-  }
   return (
     <div className="container">
       
