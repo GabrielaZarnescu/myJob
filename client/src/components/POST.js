@@ -6,8 +6,8 @@ export const POST=({_id,progLang,workTime,location,description})=>{
       <CardTitle tag="h5" style={{textAlign:'center'}}>OFFER</CardTitle>
     </CardBody>
     <CardBody>
-      {/*<CardText style={{textAlign:'center'}}> <Link to={`details/${_id}`}>{name}</Link> 
-      </CardText> */}
+      <CardText style={{textAlign:'center'}}> <Link to={`details/${_id}`}>Details</Link> 
+      </CardText> 
       <CardText style={{textAlign:'center'}}>
           Programming language: {progLang}
           <br/>

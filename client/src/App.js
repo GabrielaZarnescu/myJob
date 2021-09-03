@@ -10,6 +10,7 @@ import LoginForm from './components/LoginForm';
 import Posts from './components/Posts';
 import ReqPosts from "./components/ReqPosts";
 import MakePost from './pages/MakePost';
+import PostDetail from "./components/PostDetails";
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/request" component={ReqPosts}/>
         <Route path="/loginn" component={LoginForm}/>
         <Route path="/posts" component={Posts}/>
+        <Route exact path="/details/:id" component={PostDetail}/>
         <Route path="/" component={Home}/>
       </Switch>
     </div>

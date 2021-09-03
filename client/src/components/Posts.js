@@ -17,7 +17,7 @@ const Posts=()=>{
         return(
             <div className="contain">
            <div className="cards"> {posts.map((post)=>
-            <POST className="post"
+            <POST 
             key={post._id}
             progLang={post.progLang}
             workTime={post.workTime}
